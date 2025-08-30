@@ -12,7 +12,7 @@ app = Dash()
 df = pd.read_csv("new_daily_sales.csv")
 
 
-fig = px.line(df, x="date", y="sales")
+fig = px.line(df, x="date", y="sales", title="Pink Morsel Sales Visualizer")
 
 
 app.layout = html.Div([
@@ -86,7 +86,7 @@ def update_visualization(selected_region):
     if selected_region != 'All':
         dff = dff[dff['region'] == selected_region]
 
-    fig = px.line(dff, x='date', y='sales')
+    fig = px.line(dff, x='date', y='sales', title="Pink Morsel Sales Visualizer")
 
     return fig
 
